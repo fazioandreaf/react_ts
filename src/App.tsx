@@ -1,22 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import Message from './Message.tsx';
 
 function App() {
+
+  //  array qith multiply types in the exactly positione
+  let aTuple : [string, number] = ['Manny', 2];
+  // enum similitary a object with initial value
+  enum Codes {first = 1, second = 2};
+  
+  // void is for return anything
+  const warning = () : void => {
+    console.log("warn")
+  }
+
+
+  // let firstValue: string = 'Manny';
+  // let firstValue: number = 1;
+  // let firstValue: boolean = true;
+  let firstValue: Array<string> = ['dsada',' dsa',' da'];
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          The value {firstValue} is of { typeof firstValue} type!
+          <br />
+          The value {aTuple} is of { typeof aTuple} type!
+          <Message name="Manny" message="New message propr"/>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
