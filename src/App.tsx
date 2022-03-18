@@ -1,8 +1,17 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Message from './Message.tsx';
 
-function App() {
+const initialState : object = {
+  name: 'Manny',
+  message: 'Typescript is cool'
+}
+
+// define new type
+type State = Readonly<typeof initialState>
+
+function App(initialState: { name: string; message: string; }) :State {
 
   //  array qith multiply types in the exactly positione
   let aTuple : [string, number] = ['Manny', 2];
@@ -27,7 +36,7 @@ function App() {
           The value {firstValue} is of { typeof firstValue} type!
           <br />
           The value {aTuple} is of { typeof aTuple} type!
-          <Message name="Manny" message="New message propr"/>
+          <Message name={initialState.name} message={initialState.message} />
         </p>
       </header>
     </div>
